@@ -1,10 +1,20 @@
+import { useEffect } from "react";
 import "./App.css";
 import { Container, AppBar, Typography, Grow, Grid } from "@material-ui/core";
+import { useDispatch } from "react-redux";
 
 import Posts from "./components/posts/Posts";
 import Form from "./components/form/Form";
 
-function App() {
+import { getPosts } from "./actions/posts";
+
+const App = () => {
+  const dispatch = useDispatch();
+
+  useEffect(() => {
+    dispatch(getPosts());
+  }, [dispatch]);
+
   return (
     <Container maxWidth="lg">
       <AppBar className="appBar" position="static" color="inherit">
@@ -31,6 +41,6 @@ function App() {
       </Grow>
     </Container>
   );
-}
+};
 
 export default App;

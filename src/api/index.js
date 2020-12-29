@@ -1,7 +1,6 @@
 import axios from "axios";
 
-const backendUrl = "http://localhost:5000/posts";
+const postUrl = "http://localhost:5000/posts";
 
-export const feathPosts = () => {
-  axios.get(url);
-};
+export const fetchPosts = () => axios.get(postUrl);
+export const createPost = (newPost) => axios.post(postUrl, newPost);
