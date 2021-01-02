@@ -12,3 +12,9 @@
 image {
   margin-left: 15px;
 }
+
+@media only screen and (max-width: 600px) {
+  .content {
+    flex-direction: column-reverse;
+  }
+}
